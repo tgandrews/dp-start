@@ -8,8 +8,9 @@ window_number=1;
 startProcess() {
   window_identity="$session_name:$window_number";
   application_path="$project_path/$1";
-  tmux new-window -t $window_identity -n $1 "cd $application_path; $2; read";
+  tmux new-window -t $window_identity -n $1;
   tmux split-window -h -t $window_identity;
+  tmux send-keys -t "$window_identity.0" "cd $application_path && $2" Enter
   tmux send-keys -t "$window_identity.1" "cd $application_path" Enter
   window_number=$(($window_number + 1))
 }
