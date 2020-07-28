@@ -33,6 +33,7 @@ startProcess 'dp-hierarchy-api' 'make debug';
 startProcess 'dp-search-api' 'make debug';
 startProcess 'dp-frontend-cookie-controller' 'make debug';
 startProcess 'dp-api-router' 'make debug';
+startProcess 'dp-frontend-homepage-controller' 'make debug';
 
 tmux select-window -t $session_name:2;
 tmux -2 attach-session -t $session_name;
