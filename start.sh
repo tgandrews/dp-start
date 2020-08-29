@@ -34,7 +34,12 @@ startProcess 'dp-search-api' 'make debug';
 startProcess 'dp-frontend-cookie-controller' 'make debug';
 startProcess 'dp-api-router' 'make debug';
 startProcess 'dp-frontend-homepage-controller' 'make debug';
-startProcess 'dp-table-renderer' 'make debug';
+startProcess 'dp-table-renderer' 'cd ~/go/src/github.com/onsdigital/dp-table-renderer && make debug';
+startProcess 'dp-dataset-exporter' 'make debug';
+startProcess 'dp-dataset-exporter-xlsx' 'make debug';
+startProcess 'dp-download-service' 'make debug';
+startProcess 'dp-image-api' 'make debug';
+startProcess 'dp-start' 'vault server -dev'
 
 tmux select-window -t $session_name:2;
 tmux -2 attach-session -t $session_name;
